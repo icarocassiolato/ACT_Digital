@@ -2,37 +2,38 @@
 
 #Instruções
 
-#1 - String de conexão
-Informar a string de conexão com o banco de dados no arquivo .ENV (presente na pasta Api).
-Para compilação em modo release é usada a chave CONNECTION_STRING_PRO
-Para compilação em modo debug é usada a chave CONNECTION_STRING_DEV
+<h1 align="center">1 - String de conexão</h1>
+Informar a string de conexão com o banco de dados no arquivo .ENV (presente na pasta Api).<br/>
+Para compilação em modo release é usada a chave CONNECTION_STRING_PRO<br/>
+Para compilação em modo debug é usada a chave CONNECTION_STRING_DEV<br/><br/>
 
-Exemplo:
-CONNECTION_STRING_DEV=Server=LAPTOP-CLJFOA4K\SQLEXPRESS;Database=Aplicativo;Trusted_Connection=True;MultipleActiveResultSets=true
-CONNECTION_STRING_PRO=Server=LAPTOP-CLJFOA4K\SQLEXPRESS;Database=Aplicativo;Trusted_Connection=True;MultipleActiveResultSets=true
+Exemplo:<br/>
+CONNECTION_STRING_DEV=Server=LAPTOP-CLJFOA4K\SQLEXPRESS;Database=Aplicativo;Trusted_Connection=True;MultipleActiveResultSets=true<br/>
 
-#2 - Exceções
-Foi criado um middleware para o gerenciamento de exceções (ExceptionMiddleware), 
-caso ocorra uma exceção em modo release, será dada a seguinte mensagem ao usuário: "Erro inesperado".
-caso ocorra uma exceção em modo debug, será exibida a callstack do erro.
+CONNECTION_STRING_PRO=Server=LAPTOP-CLJFOA4K\SQLEXPRESS;Database=Aplicativo;Trusted_Connection=True;MultipleActiveResultSets=true<br/>
 
-#3 - Token de autorização
-Foi implementada a funcionalidade de atutenticação do usuário por token.
-Desse modo, antes de fazer a chamada dos endpoints da API, é necessário gerar um token através do seguinte endpoint (Método POST):
+<h1 align="center">2 - Exceções</h1>
+Foi criado um middleware para o gerenciamento de exceções (ExceptionMiddleware), <br/>
+caso ocorra uma exceção em modo release, será dada a seguinte mensagem ao usuário: "Erro inesperado".<br/>
+caso ocorra uma exceção em modo debug, será exibida a callstack do erro.<br/>
 
-https://localhost:5001/Token
+<h1 align="center">3 - Token de autorização</h1>
+Foi implementada a funcionalidade de atutenticação do usuário por token.<br/>
+Desse modo, antes de fazer a chamada dos endpoints da API, é necessário gerar um token através do seguinte endpoint (Método POST):<br/>
 
-No body da requisição, deverão ser informados o Nome e Acesso do usuário. Por exemplo:
+https://localhost:5001/Token<br/>
 
-{
-  Nome:"Usuário teste",
-  Acesso:1
-}
+No body da requisição, deverão ser informados o Nome e Acesso do usuário. Por exemplo:<br/>
 
-Onde
-Acesso = 1 - Usuário
-Acesso = 2 - Administrador
+{<br/>
+  Nome:"Usuário teste",<br/>
+  Acesso:1<br/>
+}<br/>
 
-#Extras
-Criei arquivo docker para rodar a aplicação como microsserviço
+Onde<br/>
+Acesso = 1 - Usuário<br/>
+Acesso = 2 - Administrador<br/>
+
+<h1 align="center">4 - Extras</h1>
+Criei arquivo docker para rodar a aplicação como microsserviço<br/>
 Foi gerado o Swagger da aplicação, bastando acessar a URL base (https://localhost:5001) para ter acesso ao mesmo
